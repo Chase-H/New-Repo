@@ -1,0 +1,11 @@
+import re
+import csv
+
+fobj = open(r'c:\Users\chase.hudson\Desktop\Branded Title Notes.txt', 'r')
+text = fobj.read()
+
+output = re.findall(r'\d\d\d\d\d\d\d\d\d', text)
+
+with open(r'c:\Users\chase.hudson\Desktop\Python Work\filename1.csv' , 'w') as fout:
+    wr = csv.writer(fout, quoting = csv.QUOTE_ALL)
+    wr.writerow(output)
